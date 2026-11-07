@@ -1,0 +1,25 @@
+What is Agentic RAG?
+
+Agentic RAG (Retrieval-Augmented Generation) is an advanced AI pipeline where
+the LLM acts as an agent that can decide when and how to retrieve information
+from a knowledge base.
+
+Unlike traditional RAG which always retrieves before generating, Agentic RAG:
+
+1. Decides whether retrieval is needed for a given query
+2. Can perform multiple retrieval steps iteratively
+3. Can combine information from multiple retrieved sources
+4. Can reason about the quality of retrieved content
+
+Key Components:
+- LLM: Llama 3.2 (runs locally via Ollama)
+- Vector Store: ChromaDB (stores document embeddings)
+- Embeddings: nomic-embed-text (converts text to vectors)
+- Agent Framework: LangChain AgentExecutor with tool calling
+
+Benefits over standard RAG:
+- More accurate answers through iterative retrieval
+- Better handling of complex, multi-step questions
+- Ability to combine knowledge from multiple documents
+- Reduced hallucination through grounded retrieval
+

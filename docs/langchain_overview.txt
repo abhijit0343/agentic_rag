@@ -1,0 +1,30 @@
+LangChain Overview
+
+LangChain is an open-source framework designed to simplify the creation of
+applications using large language models (LLMs).
+
+Core Features:
+1. Chains: Compose multiple LLM calls and operations in sequence
+2. Agents: LLMs that can decide which tools to use and in what order
+3. Memory: Store and retrieve conversation history
+4. Retrievers: Fetch relevant documents from vector stores
+5. Document Loaders: Load data from PDFs, URLs, databases, and more
+6. Text Splitters: Break large documents into manageable chunks
+
+Supported LLM Providers:
+- OpenAI (GPT-4, GPT-3.5)
+- Anthropic (Claude)
+- Google (Gemini)
+- Meta (Llama via Ollama)
+- Mistral, Cohere, and many more
+
+LangChain integrates with:
+- Vector DBs: ChromaDB, Pinecone, Weaviate, FAISS
+- Document stores: S3, Google Drive, Notion, Confluence
+- APIs: Search engines, weather, calculators, SQL databases
+
+LangSmith (companion product):
+- Traces and monitors LangChain pipelines
+- Requires LANGCHAIN_API_KEY for activation
+- Provides debugging and performance analytics
+

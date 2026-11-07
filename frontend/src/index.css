@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --paper: #F7F5F0;
+    --paper-tint: #F1EEE7;
+    --ink: #0A0A0A;
+    --accent: #C8B27A;
+  }
+
+  /* Smooth scroll and rendering */
+  html {
+    scroll-behavior: smooth;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: #F7F5F0;
+    color: #0A0A0A;
+    font-family: 'Inter Tight', system-ui, -apple-system, sans-serif;
+    overflow-x: hidden;
+  }
+}
+
+/* Tactile film grain overlay via feTurbulence SVG */
+.paper-grain {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.055'/%3E%3C/svg%3E");
+}
+
+.paper-grain-dark {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilterDark'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilterDark)' opacity='0.065'/%3E%3C/svg%3E");
+}
+
+/* Radial dark vignette */
+.radial-vignette {
+  background: radial-gradient(circle at 50% 30%, rgba(26,26,26,0.85) 0%, rgba(10,10,10,1) 85%);
+}
+
+/* Hairline borders */
+.border-hairline-ink {
+  border: 1px solid rgba(10, 10, 10, 0.09);
+}
+
+.border-hairline-light {
+  border: 1px solid rgba(247, 245, 240, 0.12);
+}
+
+/* Editorial line rule */
+.editorial-rule {
+  height: 1px;
+  background: linear-gradient(90deg, rgba(10,10,10,0.02) 0%, rgba(10,10,10,0.12) 50%, rgba(10,10,10,0.02) 100%);
+}
+
+.editorial-rule-dark {
+  height: 1px;
+  background: linear-gradient(90deg, rgba(247,245,240,0.02) 0%, rgba(247,245,240,0.14) 50%, rgba(247,245,240,0.02) 100%);
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(138, 135, 130, 0.3);
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(138, 135, 130, 0.6);
+}
+
+/* Animation utilities */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
